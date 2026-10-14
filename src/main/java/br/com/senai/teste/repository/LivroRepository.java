@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import br.com.senai.teste.model.Livro;
 
 @Repository 
-public interface LivroRepository extends JpaRepository<Livro, Long> {   
+public interface LivroRepository extends JpaRepository<Livro, Integer> {   
 }

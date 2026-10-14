@@ -38,7 +38,7 @@ public class LivroController {
     }
 
     @GetMapping ("/{id}")
-    public ResponseEntity<Livro> buscarPorId(@PathVariable Long id) {
+    public ResponseEntity<Livro> buscarPorId(@PathVariable Integer id) {
         Livro livro = livroService.buscarPorId(id);
         if (livro != null) {
             return ResponseEntity.ok(livro);
@@ -47,7 +47,7 @@ public class LivroController {
     }
 
     @PutMapping ("/{id}")
-    public ResponseEntity<Livro> atualizar(@PathVariable Long id, @RequestBody Livro livro) {
+    public ResponseEntity<Livro> atualizar(@PathVariable Integer id, @RequestBody Livro livro) {
         Livro livroAtualizado = livroService.atualizar(id, livro);
         if (livroAtualizado != null) {
             return ResponseEntity.ok(livroAtualizado);
@@ -56,7 +56,7 @@ public class LivroController {
     }
 
     @DeleteMapping ("/{id}")
-    public ResponseEntity<Void> excluir(@PathVariable Long id) {
+    public ResponseEntity<Void> excluir(@PathVariable Integer id) {
         Livro livro = livroService.buscarPorId(id);
         if (livro != null) {
             livroService.excluir(id);

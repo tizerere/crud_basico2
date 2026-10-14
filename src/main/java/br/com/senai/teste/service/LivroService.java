@@ -22,12 +22,12 @@ public class LivroService {
         return  livroRepository.findAll();
     }
 
-    public Livro buscarPorId(Long id){
+    public Livro buscarPorId(Integer id){
         Optional<Livro> livro = livroRepository.findById(id);
         return livro.orElse(null);
     }
 
-    public Livro atualizar(Long id, Livro livroAtualizado) {
+    public Livro atualizar(Integer id, Livro livroAtualizado) {
         Livro livroExistente = buscarPorId(id);
         if ((livroExistente != null)) {
             livroExistente.setTitulo(livroAtualizado.getTitulo());
@@ -38,7 +38,7 @@ public class LivroService {
         return null;
     }
 
-    public  void excluir(Long id) {
+    public  void excluir(Integer id) {
         livroRepository.deleteById(id);
     }
 }
